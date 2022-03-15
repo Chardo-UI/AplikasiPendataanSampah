@@ -1,0 +1,60 @@
+extends ../layout/base 
+block content 
+	section.content-header 
+		h1 
+			| Edit sampah
+		ol.breadcrumb 
+	section.content
+		.box
+			.box-header.with-border
+				h3.box-title
+					| sampah
+				.box-tools.pull-right
+					button(type='button', data-widget='collapse', data-toggle='tooltip',title='collapse').btn.btn-box-tool
+						i.fa.fa-minus
+					
+			.box-body
+				form(role='form',method='post' action='/sampah/edit/#{(id==undefined) ? data.id : id}')
+					.row
+						
+						.col-xs-6
+							.box-body
+								- if (messages.msg_error) 
+									.alert.alert-danger.alert-dismissable 
+										button.close(type='button', data-dismiss='alert', aria-hidden='true') 
+											| ×
+										h4
+											i.icon.fa.fa-ban
+											| Alert! 
+										| !{messages.msg_error}
+								- if (messages.msg_info) 
+									.alert.alert-success.alert-dismissable 
+										button.close(type='button', data-dismiss='alert', aria-hidden='true') 
+											| ×
+										h4
+											i.icon.fa.fa-ban
+											| Success! 
+										| !{messages.msg_info}
+								.form-group
+									label
+										| Nama
+									input(type='text',value="#{data.nama}",name='nama',placeholder='Edit Nama', autofocus).form-control
+								.form-group
+									label
+										| Jenis
+									input(type='text',value="#{ (jenis == undefined) ? data.jenis : jenis }",name='jenis',placeholder='Edit Alamat').form-control
+								.form-group
+									label
+										| Berat
+									input(type='text',value="#{ (berat == undefined) ? data.berat : berat }",name='berat',placeholder='Edit berat').form-control
+								.form-group
+									label
+										| Daur Ulang (Bisa / Tidak)
+									input(type='text',value="#{ (daur_ulang == undefined) ? data.daur_ulang : daur_ulang }",name='daur_ulang',placeholder='Edit daur ulang').form-control
+							.box-footer
+								input(type="hidden",name="_method", value="PUT")
+								button(type='submit').btn.btn-primary
+									i.fa.fa-pencil 
+									|  Edit
+								a(href='/sampah/data').btn.btn-primary.pull-right
+									| Back
