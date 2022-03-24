@@ -56,7 +56,7 @@ router.post("/add", authentication_mdl.is_login, function (req, res, next) {
               session_store: req.session,
             });
           } else {
-            req.flash("msg_info", "Create sampah success");
+            req.flash("msg_info", "Berhasil Menambahkan Data Sampah");
             res.redirect("/sampah/data");
           }
         }
@@ -156,7 +156,7 @@ router.put(
                 daur_ulang: req.param("daur_ulang"),
               });
             } else {
-              req.flash("msg_info", "Update sampah success");
+              req.flash("msg_info", "Update sampah sukses");
               res.redirect("/sampah/edit/" + req.params.id);
             }
           }
@@ -197,7 +197,7 @@ router.delete(
               req.flash("msg_error", errors_detail);
               res.redirect("/sampah/data");
             } else {
-              req.flash("msg_info", "Delete Data sampah Success");
+              req.flash("msg_info", "Hapus Data sampah Sukses");
               res.redirect("/sampah/data");
             }
           }

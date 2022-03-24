@@ -57,7 +57,7 @@ router.delete(
               req.flash("msg_error", errors_detail);
               res.redirect("/pengelola");
             } else {
-              req.flash("msg_info", "Delete pengelola Success");
+              req.flash("msg_info", "Hapus pengelola Sukses");
               res.redirect("/pengelola");
             }
           }
@@ -131,7 +131,7 @@ router.put(
                 phone: req.param("phone"),
               });
             } else {
-              req.flash("msg_info", "Update pengelola success");
+              req.flash("msg_info", "Update pengelola sukses");
               res.redirect("/pengelola/edit/" + req.params.id);
             }
           }
@@ -184,7 +184,7 @@ router.post("/add", authentication_mdl.is_login, function (req, res, next) {
               session_store: req.session,
             });
           } else {
-            req.flash("msg_info", "Create pengelola success");
+            req.flash("msg_info", "Berhasil menambahkan pengelola");
             res.redirect("/pengelola");
           }
         }
