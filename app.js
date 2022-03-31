@@ -41,11 +41,11 @@ type koneksi : single,pool and request
 -------------------------------------------*/
 app.use(
     connection(mysql,{
-        host: 'db4free.net',
-        user: 'aku_aku', // your mysql user
-        password : 'daraayam442', // your mysql password
+        host: 'bezzgvmndrs73vmmdmh2-mysql.services.clever-cloud.com',
+        user: 'uhb8ymmxvdqrpvbs', // your mysql user
+        password : 'BavChxQRXhQRmfsOYoiV', // your mysql password
         port : 3306, //port mysql
-        database:'databasesampah_1' // your database name
+        database:'bezzgvmndrs73vmmdmh2' // your database name
     },'pool') //or single
 );
 app.use('/', index);

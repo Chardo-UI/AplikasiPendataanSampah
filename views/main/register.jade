@@ -18,7 +18,7 @@ html
 					| Page
 			.login-box-body
 				p.login-box-msg
-					| Register lur
+					| Register
 				form(action="/register/",method="post")
 					- if (messages.msg_error) 
 						.alert.alert-danger.alert-dismissable 
@@ -43,7 +43,7 @@ html
 				.social-auth-links.text-center
 					p 
 					| Klik login untuk melanjutkan
-					a(href='/register').text-center
+					a(href='/login').text-center
 						|	LOGIN
 
 script(type='text/javascript', src='/adminlte/plugins/jQuery/jquery-2.2.3.min.js')

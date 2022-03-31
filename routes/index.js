@@ -78,7 +78,7 @@ router.post('/register',function(req,res,next){
 			v_pass = req.sanitize( 'txtPassword' ).escape().trim(); 
 			v_email = req.sanitize( 'txtEmail' ).escape().trim();
 			
-			var query = connection.query('INSERT INTO user VALUES ("","'+v_email+'", "'+v_pass+'")',function(err,rows)
+			var query = connection.query('INSERT INTO user VALUES ("'+v_email+'", "'+v_pass+'")',function(err,rows)
 			{
 				if(err)
 				{
@@ -95,6 +95,9 @@ router.post('/register',function(req,res,next){
 		});
 	}
 });
+
+
+
 router.get('/logout', function(req, res)
 { 
 	req.session.destroy(function(err)
